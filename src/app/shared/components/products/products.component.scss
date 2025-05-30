@@ -1,0 +1,114 @@
+.imgContainer{
+    display: flex;
+    width:250px;
+    height: 250px;
+    border : 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 10px;
+    
+}
+.imgContainer {
+    height: 200px;
+    width: 200px;
+    img {
+      height: 100%;
+      width: 100%;
+      transform: scale(1);
+      object-fit: contain;
+      margin-left: 0px;
+      margin-top: 0;
+      overflow: hidden;
+    }
+}
+.card1 {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+.hoverButton {
+    position: absolute;
+    top: 48%;
+    right: 40px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+   // border-radius: 20%;
+}
+.hoverButton button{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+   /// display: flex;
+   // justify-content: center;
+   // align-items: center;
+
+}
+
+  
+.card1:hover .hoverButton {
+    opacity: 1;
+    pointer-events: auto;
+    background: rgb(255, 255, 255, 0);
+    color: rgb(255, 255, 255, 0);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+.liking {
+    color: red;
+  }
+//.imgContainer img{
+//    display: flex;
+//    height: 100%;
+//    width:100%;
+//    position: relative;
+//    align-items: stretch;
+//    object-fit: cover;
+//}
+.category{
+    color:gray;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.title{
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 0;
+}
+.card1{
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.sider{
+    position: absolute;
+    top:20px;
+    right:0 ;
+    color:blueviolet;
+    font-size: 25px;
+    transition: all 0.4s ease-in;
+    .icon{
+        background-color: #fff;
+        border-radius: 50%;
+        margin-bottom: 5px;
+        height: 35px;
+        width:35px;
+    }
+}
+//&:hover{
+//    border : 1px solid blueviolet;
+//    .sider{
+//        right:20px;
+//    }
+//}

@@ -1,0 +1,22 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card" *ngIf="userObj;else noUser">
+            <div class="card-header">
+                {{userObj.userName}}
+            </div>
+            <div class="card-body">
+                The user is having the userRole {{userObj.userRole}}
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button [queryParamsHandling]="'preserve'" routerLink="edit"
+                class="btn btn-sm btn-info mr-3">Edit</button>
+                <button (click)="OnUserRemove()"
+                class="btn btn-sm btn-danger">Remove</button>
+            </div>
+        </div>
+    </div>
+    <ng-template #noUser>
+       <p class="alert alert-warning">No User Available!!!</p>
+    </ng-template>
+</div>

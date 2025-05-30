@@ -1,0 +1,135 @@
+
+
+.productCard{
+  position: relative;
+  .imgContainer{
+      img{
+         width:100%;
+         height: 540px;
+         object-fit: cover;
+      }
+  }
+  .infoContainer{
+      .elite{
+          font-size: 22px;
+          font-weight: 600;
+      }
+      h4{
+          display: inline;
+      }
+      .price{
+          color: red;
+          font-size: 25px;
+      }
+      .brandInfo{
+          display: flex;
+          flex-direction: column;
+          gap:4px;
+      
+      }
+      .brandList{
+          display: flex;
+          align-items: center;
+          gap:20px;
+      }
+      .brand{
+          font-size: 15px;
+          font-weight: 500;
+      }
+      .brandInfo p{
+          position: relative;
+
+      }
+      .InfoBox{
+          width: 100%;
+          height: 440px;
+          border: 1px solid gray;
+          border-radius: 5px;
+      }
+      .InfoBox h5{
+          color:red;
+          font-size: 20px;
+          margin: 15px;
+      }
+      .quantity{
+          font-size: 14px;
+          color:black;
+      }
+      .action{
+          display: flex;
+          align-items:center;
+
+      }
+      .action{
+          .box{
+              width:30px;
+              height: 30px;
+              border: 1px solid #ccc;
+              border-radius: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+          }
+          .box.dark{
+              background-color: #333;
+              color:#fff;
+          }
+          .danger{
+              border-color: red;
+          }
+          .success{
+              border-color: blue;
+          }
+          .count{
+              font-weight: 700;
+          }
+          //.color{
+          //    display: inline-block;
+          //}
+          
+      }
+      .selectColor{
+          // display: inline-block;
+           width:200px;
+           height: 30px;
+           font-weight: 500;
+           font-size: 15px;
+           border:1px solid gray;
+           border-radius: 8px;
+       }
+       .btn{
+          width:93%;
+          display: block;
+          border-radius: 10px;
+       }
+       .details{
+          display: inline-block;
+       }
+
+  }
+  .rate{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+}
+.slideImg {
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    margin: 10px;
+    cursor: pointer;
+    justify-content: center;
+    border: 1px solid black;
+    li {
+      list-style: none;
+      display: inline-block;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }

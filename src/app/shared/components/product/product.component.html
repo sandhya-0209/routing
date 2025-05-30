@@ -1,0 +1,122 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mb-4 productCard">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="imgContainer">
+                                <img
+                                 [src]="selectedImg"
+                                 [alt]="prodObj"
+                                 [title]="prodObj"
+                                />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 px-auto">
+                                  <div class="slideImg" *ngFor="let product of prodObj.images">
+                                    <li>
+                                      <img
+                                        (click)="onimgChange(product)"
+                                        [src]="product"
+                                        [alt]="product"
+                                        [title]="product"
+                                      />
+                                    </li>
+                                  </div>
+                                </div>
+                              </div>
+                            <div>
+                                <ng-template mat-tab-label>
+                                    <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+                                    First
+                                </ng-template> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 offset-md-1 infoContainer">
+                            <span>Categories : <span style="color: blue;">Consumer Electronics</span></span>
+                            <h2 class="text-capitalize elite">elite gourmet EKT1001B electric BPA-Free glass kettle,cordless 360&deg; base </h2>
+                            <div class="rate mb-4">
+                                <div>
+                                    Review ({{prodObj.reviews_count}})
+                                </div>
+                                <div class="solid">
+                                    Solid: 349
+                                </div>
+                                <div class="view text-info">
+                                    View shop
+                                </div>
+                            </div>
+                            <h4 class="price">{{prodObj.total_price}}</h4>
+                            <div>
+                                <ul class="list-unstyled brandInfo mt-4">
+                                    <li class="brandList">
+                                        <p class="m-0 brand">Brand</p>
+                                        <span style="font-weight: 400;">Elite Gourmet</span>
+                                    </li>
+                                    <li class="brandList">
+                                        <p class="m-0 brand">Capacity</p>
+                                        <span style="font-weight: 400;">1 Liters</span>
+                                    </li>
+                                    <li class="brandList">
+                                        <p class="m-0 brand">Material</p>
+                                        <span style="font-weight: 400;">Glass</span>
+                                    </li>
+                                    <li class="brandList">
+                                        <p class="m-0 brand">Wattage</p>
+                                        <span style="font-weight: 400;">1100 Watts</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <hr>
+                            <h2>About this item</h2>
+                            <ul class="list-group ml-3 mb-2">
+                                <li class="list-group-items description" *ngFor="let description of prodObj.product_description">
+                                        {{description}}
+                                </li>
+                            </ul>
+                            <div class="InfoBox">
+                               <h5 class="mb-2">{{prodObj.total_price}}</h5>
+                               <div>
+                                 <i class="fa-solid fa-truck ml-3 mt-2 mr-2"></i>
+                                 <span>Free Shopping</span>
+                               </div>
+                               <ul class="list-unstyled brandInfo mt-2 ml-3">
+                                   <li class="brandList">
+                                      <p class="m-0" style="font-weight: 400;">Shipping to :</p>
+                                      <span class="brand">Metro Manila</span>
+                                    </li>
+                               </ul>
+                               <h6 class="quantity ml-3 mt-0">Quantity</h6>
+                               <div class="action">
+                                <div class="box danger ml-3" [class.disabled]="count === 1" (click)="decrement()">
+                                    <span> - </span>
+                                </div>
+                                <div class="count text-center mt-1 ml-2">
+                                 {{count}}
+
+                               </div>
+                               <div class="box success mr-4 ml-2" (click)="increment()">
+                                  <span> + </span>
+                               </div>
+                            </div>
+                            <h6 class="quantity ml-3 mt-3"> Color </h6>
+                            <div class="color ml-3">
+                              <select class="selectColor">
+                                <option class="text-center" value="graphite black">Graphite Black</option>
+                                <option class="text-center" value="graphite red">Graphite Red</option>
+                              </select>
+                            </div>
+                            <button class="btn btn-md btn-danger mt-2 ml-3"><i class="fa-solid fa-cart-plus mr-2"></i>Add Product</button>
+                            <button class="btn btn-dark mt-2 ml-3">Buy Now</button>
+                            <h6 class="quantity ml-3 mt-2">Details</h6>
+                            <div class="details mt-0 ml-3" *ngFor="let tag of prodObj.tags">{{tag}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

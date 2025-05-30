@@ -1,0 +1,97 @@
+
+<main class="main">
+    <div class="card">
+        <div class="card-body">
+            <h2>{{alreadyHasAnAcc ? 'Log In' : 'Sign Up'}}</h2>
+            <!-- Log in Form -->
+            <ng-container *ngIf="alreadyHasAnAcc">
+               <form [formGroup]="logInForm" (ngSubmit)="onLogIn()">
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="text" id="email" name="email"
+                    class="form-control" formControlName="email"> 
+                    <strong *ngIf="f['email'].touched && f['email'].hasError('required')"
+                    class="text-danger">
+                      Email is required field.
+                    </strong>
+                     <strong *ngIf="f['email'].touched && f['email'].hasError('pattern')"
+                    class="text-danger">
+                      Invalid email address format. Please use a format like (e.g. example@gmail.com)
+                    </strong>
+                </div>
+                 <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="text" id="password" name="password"
+                    class="form-control" formControlName="password">
+                     <strong *ngIf="f['password'].touched && f['password'].hasError('required')"
+                    class="text-danger">
+                      password is required field.
+                    </strong>
+                     <strong *ngIf="f['password'].touched && f['password'].hasError('pattern')"
+                    class="text-danger">
+                      Password must be at least 8 characters, including uppercase and lowercase letters,
+                      numbers and special characters.
+                    </strong>
+                </div>
+                <button type="submit" class="btn btn-sm btn-info">Log In</button>
+               </form>
+            </ng-container>
+            <!-- Sign Up Form -->
+              <ng-container *ngIf="!alreadyHasAnAcc">
+               <form [formGroup]="signUpForm" (ngSubmit)="onRegister()">
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="text" id="email" name="email"
+                    class="form-control" formControlName="email">
+                    <strong *ngIf="controls['email'].touched && controls['email'].hasError('required')"
+                    class="text-danger">
+                      Email is required field.
+                    </strong>
+                     <strong *ngIf="controls['email'].touched && controls['email'].hasError('pattern')"
+                    class="text-danger">
+                      Invalid email address format. Please use a format like (e.g. example@gmail.com)
+                    </strong>
+                </div>
+                 <div class="form-group">
+                    <label for="password">Password*</label>
+                    <input type="text" id="password" name="password"
+                    class="form-control" formControlName="password">
+                     <strong *ngIf="controls['password'].touched && controls['password'].hasError('required')"
+                    class="text-danger">
+                      password is required field.
+                    </strong>
+                     <strong *ngIf="controls['password'].touched && controls['password'].hasError('pattern')"
+                    class="text-danger">
+                      Password must be at least 8 characters, including uppercase and lowercase letters,
+                      numbers and special characters.
+                    </strong>
+                </div>
+                <div class="form-group">
+                    <label for="userRole">User Role*</label>
+                    <select name="userRole" id="userRole" formControlName="userRole" 
+                    class="form-control">
+                    <option value="buyer">Buyer</option>
+                    <option value="admin">Admin</option>
+                    <option value="superAdmin">superAdmin</option>
+                     <strong *ngIf="controls['userRole'].touched && controls['userRole'].hasError('required')"
+                    class="text-danger">
+                      userRole is required field.
+                    </strong>
+                     <strong *ngIf="controls['userRole'].touched && controls['userRole'].hasError('pattern')"
+                    class="text-danger">
+                      userRole must contain alphabets.
+                    </strong>
+               </select>
+                </div>
+                <button type="submit" class="btn btn-sm btn-info">Sign Up</button>
+               </form>
+            </ng-container>
+            <p class="mt-2">
+                <a href="javascript:;" class="btn btn-link" 
+                (click)="alreadyHasAnAcc=!alreadyHasAnAcc">
+               {{alreadyHasAnAcc ? 'Dont have Account' : 'Already have Account'}}
+            </a>
+            </p>
+        </div>
+    </div>
+</main>

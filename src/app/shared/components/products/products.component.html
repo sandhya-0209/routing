@@ -1,0 +1,32 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 card1" [routerLink]="item._id"  *ngFor="let item of getPaginationData">
+         <div>
+           <div clas="card h-100 border-0">
+              <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="imgContainer text-center">
+                            <img 
+                                (mouseenter)="isImg = item"
+                                (mouseleave)="isImg = null"
+                                [src]="isImg === item? item.images[1] : item.images[0]" [alt]="item" [title]="item"> 
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="category mt-4">{{item.category}}</h5>
+                        <h4 class="mb-2 title text-primary">{{item.title}}</h4>
+                        <h2 class=" price text-dark mt-0">
+                            <small>{{item.total_price}}</small>
+                        </h2>
+                    </div>
+                </div>
+              </div>
+           </div>
+         </div> 
+        </div>
+    </div>
+</div>
